@@ -1,0 +1,226 @@
+/* ---------------------------------------------------------------
+   Greyce Bittencourt — Psicóloga · CRP 07/32840
+   HTML/CSS/JS puro. Zero requisição externa. Fontes servidas daqui.
+   Paleta tirada das fotos dela e do rosa-nude do site atual.
+----------------------------------------------------------------*/
+
+/* ---------- fontes ---------- */
+@font-face{font-family:Fahkwang;src:url(assets/fonts/fahkwang-300-latin.woff2)format('woff2');font-weight:300;font-style:normal;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:Fahkwang;src:url(assets/fonts/fahkwang-300-latin-ext.woff2)format('woff2');font-weight:300;font-style:normal;font-display:swap;unicode-range:U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:Fahkwang;src:url(assets/fonts/fahkwang-400-latin.woff2)format('woff2');font-weight:400;font-style:normal;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:Fahkwang;src:url(assets/fonts/fahkwang-400-latin-ext.woff2)format('woff2');font-weight:400;font-style:normal;font-display:swap;unicode-range:U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:Fahkwang;src:url(assets/fonts/fahkwang-500-latin.woff2)format('woff2');font-weight:500;font-style:normal;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:Fahkwang;src:url(assets/fonts/fahkwang-500-latin-ext.woff2)format('woff2');font-weight:500;font-style:normal;font-display:swap;unicode-range:U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:Karla;src:url(assets/fonts/karla-400-latin.woff2)format('woff2');font-weight:400;font-style:normal;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:Karla;src:url(assets/fonts/karla-400-latin-ext.woff2)format('woff2');font-weight:400;font-style:normal;font-display:swap;unicode-range:U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:Karla;src:url(assets/fonts/karla-500-latin.woff2)format('woff2');font-weight:500;font-style:normal;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:Karla;src:url(assets/fonts/karla-500-latin-ext.woff2)format('woff2');font-weight:500;font-style:normal;font-display:swap;unicode-range:U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:Karla;src:url(assets/fonts/karla-600-latin.woff2)format('woff2');font-weight:600;font-style:normal;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:Karla;src:url(assets/fonts/karla-600-latin-ext.woff2)format('woff2');font-weight:600;font-style:normal;font-display:swap;unicode-range:U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}
+
+/* ---------- tokens ---------- */
+:root{
+  --nude:#F2EAE7;          /* rosa-nude do site atual dela */
+  --creme:#FBF7F5;
+  --branco:#FFFFFF;
+  --terra:#A9765F;         /* acento, tirado do blazer/parede das fotos */
+  --terra-fundo:#8E5F4B;
+  --carvao:#2C2724;
+  --grafite:#5F564F;
+  --linha:#E4D7D1;
+
+  --container:1180px;
+  --ritmo:104px;
+  --arco:220px;            /* topo em arco: a assinatura visual do site */
+  --r:14px;
+  --sombra:0 18px 50px -28px rgba(44,39,36,.45);
+  --transicao:.55s cubic-bezier(.22,.68,.36,1);
+}
+
+/* ---------- base ---------- */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--creme);color:var(--carvao);
+  font-family:Karla,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:clamp(1rem,.97rem + .18vw,1.075rem);line-height:1.72;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:Fahkwang,Georgia,serif;font-weight:300;line-height:1.16;letter-spacing:-.015em;margin:0}
+h1{font-size:clamp(2.1rem,1.35rem + 3.1vw,3.65rem)}
+h2{font-size:clamp(1.75rem,1.25rem + 2vw,2.7rem)}
+h3{font-size:clamp(1.2rem,1.05rem + .6vw,1.5rem);font-weight:400}
+p{margin:0 0 1.15em}
+.container{width:min(100% - 44px,var(--container));margin-inline:auto}
+.secao{padding:var(--ritmo) 0}
+.secao__rotulo{
+  font-size:.75rem;letter-spacing:.19em;text-transform:uppercase;
+  color:var(--terra);font-weight:600;margin-bottom:14px
+}
+.cabeca{max-width:640px;margin-bottom:52px}
+.pular{position:absolute;left:-9999px}
+.pular:focus{left:16px;top:16px;z-index:99;background:var(--carvao);color:#fff;padding:10px 16px;border-radius:8px}
+:focus-visible{outline:2px solid var(--terra);outline-offset:3px;border-radius:4px}
+
+/* ---------- topo ---------- */
+.topo{position:sticky;top:0;z-index:50;background:rgba(251,247,245,.88);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .3s}
+.topo.rolou{border-bottom-color:var(--linha)}
+.topo__linha{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:76px}
+.marca{text-decoration:none;display:flex;flex-direction:column;line-height:1.25}
+.marca__nome{font-family:Fahkwang,serif;font-size:1.16rem;font-weight:400}
+.marca__crp{font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;color:var(--grafite)}
+.nav{display:flex;align-items:center;gap:30px}
+.nav a{text-decoration:none;font-size:.93rem;color:var(--grafite);transition:color .25s}
+.nav a:hover,.nav a.ativo{color:var(--carvao)}
+.nav__cta{
+  background:var(--terra);color:#fff !important;padding:11px 22px;border-radius:999px;
+  font-weight:500;transition:background .25s
+}
+.nav__cta:hover{background:var(--terra-fundo)}
+.menu{display:none;background:none;border:0;padding:10px;cursor:pointer}
+.menu span{display:block;width:23px;height:2px;background:var(--carvao);margin:5px 0;transition:.3s}
+.menu[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menu[aria-expanded="true"] span:nth-child(2){opacity:0}
+.menu[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ---------- botões ---------- */
+.acoes{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.botao{
+  display:inline-block;text-decoration:none;background:var(--terra);color:#fff;
+  padding:15px 30px;border-radius:999px;font-weight:500;font-size:.97rem;
+  transition:background .25s,transform .25s;
+}
+.botao:hover{background:var(--terra-fundo);transform:translateY(-2px)}
+.botao--vazado{background:transparent;color:var(--carvao);border:1px solid var(--linha)}
+.botao--vazado:hover{background:var(--nude);border-color:var(--nude)}
+
+/* ---------- hero ---------- */
+.hero{padding:clamp(46px,6vw,84px) 0 var(--ritmo);background:
+  radial-gradient(120% 90% at 88% 0%,var(--nude) 0%,rgba(242,234,231,0) 62%)}
+.hero__grade{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(34px,5vw,76px);align-items:center}
+.sobretitulo{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--terra);font-weight:600;margin-bottom:20px}
+.hero__linha{max-width:44ch;color:var(--grafite);margin-top:24px}
+.hero__foto{margin:0}
+.hero__foto img{
+  border-radius:var(--arco) var(--arco) var(--r) var(--r);
+  box-shadow:var(--sombra);width:100%;object-fit:cover;aspect-ratio:972/1276
+}
+
+/* ---------- sobre ---------- */
+.sobre{background:var(--branco)}
+.sobre__grade{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(34px,5vw,72px);align-items:start}
+.sobre__texto p{color:var(--grafite)}
+.sobre__texto h2{margin-bottom:26px}
+.assinatura{
+  font-family:Fahkwang,serif;color:var(--carvao);font-size:1.02rem;
+  padding-top:18px;border-top:1px solid var(--linha);margin-top:30px
+}
+.sobre__foto{margin:0;position:sticky;top:110px}
+.sobre__foto img{border-radius:var(--r);box-shadow:var(--sombra)}
+
+/* ---------- para quem ---------- */
+.paraquem{background:var(--nude)}
+/* 3 colunas fixas: são 9 itens, então fecha 3x3 sem célula vazia sobrando */
+.lista{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--linha);border:1px solid var(--linha);border-radius:var(--r);overflow:hidden}
+.lista li{background:var(--nude);padding:26px 28px;display:flex;gap:14px;align-items:flex-start;transition:background .3s}
+.lista li:hover{background:var(--branco)}
+.lista li::before{
+  content:"";flex:none;width:9px;height:9px;margin-top:11px;border-radius:50%;
+  background:var(--terra);opacity:.75
+}
+
+/* ---------- faixa ---------- */
+.faixa{background:var(--carvao);color:#F3ECE8;padding:clamp(58px,7vw,88px) 0;text-align:center}
+.faixa p{
+  font-family:Fahkwang,serif;font-weight:300;margin:0 auto;max-width:24ch;
+  font-size:clamp(1.35rem,1rem + 1.6vw,2.15rem);line-height:1.34
+}
+
+/* ---------- conversa ---------- */
+/* flex em vez de grid: são 7 cartões, e a última linha centraliza em vez de
+   deixar um buraco vazio à direita */
+.cartoes{display:flex;flex-wrap:wrap;justify-content:center;gap:20px}
+.cartao{
+  flex:1 1 260px;max-width:340px;
+  background:var(--branco);border:1px solid var(--linha);border-radius:var(--r);
+  padding:30px 28px 26px;transition:transform .3s,box-shadow .3s
+}
+.cartao:hover{transform:translateY(-4px);box-shadow:var(--sombra)}
+.cartao span{
+  display:block;font-family:Fahkwang,serif;font-size:1.6rem;color:var(--terra);
+  margin-bottom:12px;font-weight:300
+}
+.cartao p{margin:0;color:var(--grafite);font-size:.99rem}
+
+/* ---------- atendimento ---------- */
+.atendimento{background:var(--branco)}
+.atendimento__grade{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px}
+.modo{background:var(--creme);border:1px solid var(--linha);border-radius:var(--r);padding:38px 34px}
+.modo h3{margin-bottom:14px}
+.modo p{color:var(--grafite);margin-bottom:.9em}
+.modo p:last-child{margin-bottom:0}
+.modo__endereco{font-style:normal;color:var(--carvao)}
+
+/* ---------- contato ---------- */
+.contato{background:var(--nude)}
+.contato__grade{display:grid;grid-template-columns:1fr .9fr;gap:clamp(34px,5vw,64px);align-items:center}
+.contato__linha{color:var(--grafite);max-width:40ch;margin-bottom:32px}
+.contato__lista{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.contato__lista a{
+  display:flex;align-items:center;gap:14px;text-decoration:none;background:var(--branco);
+  border:1px solid var(--linha);border-radius:var(--r);padding:18px 22px;
+  transition:transform .25s,border-color .25s
+}
+.contato__lista a:hover{transform:translateX(4px);border-color:var(--terra)}
+.contato__lista svg{width:21px;height:21px;flex:none;fill:var(--terra)}
+.contato__lista span{font-size:.97rem}
+
+/* ---------- rodapé ---------- */
+.rodape{background:var(--carvao);color:#CFC5BE;padding:38px 0}
+.rodape__linha{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-between;align-items:center}
+.rodape p{margin:0;font-size:.88rem}
+.rodape strong{color:#F3ECE8;font-weight:500}
+
+/* ---------- flutuante ---------- */
+.flutuante{
+  position:fixed;right:20px;bottom:20px;z-index:60;width:54px;height:54px;border-radius:50%;
+  background:#25D366;display:grid;place-items:center;box-shadow:0 10px 26px -10px rgba(0,0,0,.5);
+  opacity:0;visibility:hidden;transform:translateY(12px);transition:.35s
+}
+.flutuante.aparece{opacity:1;visibility:visible;transform:none}
+.flutuante svg{width:28px;height:28px;fill:#fff}
+
+/* ---------- revelar ---------- */
+.revelar{opacity:0;transform:translateY(20px);transition:opacity var(--transicao),transform var(--transicao)}
+.revelar.visivel{opacity:1;transform:none}
+
+/* ---------- responsivo ---------- */
+@media (max-width:900px){
+  :root{--ritmo:74px;--arco:150px}
+  .hero__grade,.sobre__grade,.contato__grade{grid-template-columns:1fr}
+  .lista{grid-template-columns:repeat(2,1fr)}
+  .hero__foto{order:-1;max-width:440px}
+  .sobre__foto{position:static;max-width:520px}
+  .menu{display:block}
+  .nav{
+    position:fixed;inset:76px 0 auto;background:var(--creme);flex-direction:column;
+    align-items:flex-start;gap:0;padding:10px 22px 26px;border-bottom:1px solid var(--linha);
+    transform:translateY(-14px);opacity:0;visibility:hidden;transition:.3s
+  }
+  .nav.aberto{transform:none;opacity:1;visibility:visible}
+  .nav a{width:100%;padding:15px 0;border-bottom:1px solid var(--linha);font-size:1.02rem}
+  .nav__cta{border:0;margin-top:16px;text-align:center;padding:14px 22px}
+}
+@media (max-width:520px){
+  .container{width:min(100% - 32px,var(--container))}
+  .lista{grid-template-columns:1fr}
+  .lista li{padding:22px}
+  .cartao{max-width:none}
+  .modo{padding:30px 24px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none !important;transition:none !important;scroll-behavior:auto !important}
+  .revelar{opacity:1;transform:none}
+}
